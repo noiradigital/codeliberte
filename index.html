@@ -41,21 +41,23 @@ body {
   background: #5C1A1A;
   color: #F0CCCC;
   text-align: center;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 400;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 11px 20px;
+  padding: 9px 16px;
   position: sticky;
   top: 0;
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 8px;
+  line-height: 1.4;
+  flex-wrap: wrap;
 }
 
-.fomo-bar strong { color: #fff; font-weight: 500; }
+.fomo-bar strong { color: #fff; font-weight: 600; }
 
 .fomo-bar .pip {
   width: 5px; height: 5px;
@@ -63,6 +65,11 @@ body {
   background: #FF7070;
   animation: blink 1.4s ease infinite;
   flex-shrink: 0;
+}
+
+@media(max-width: 480px) {
+  .fomo-bar { font-size: 10px; padding: 8px 12px; gap: 6px; letter-spacing: 0.04em; }
+  .fomo-bar .pip { display: none; }
 }
 
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
@@ -542,7 +549,7 @@ footer {
 <!-- FOMO BAR -->
 <div class="fomo-bar">
   <span class="pip"></span>
-  Prix actuel&nbsp;: <strong>350 €</strong>&nbsp;— passe à <strong>497 €</strong> très bientôt
+  Prix actuel : <strong>350 €</strong> · passe à <strong>497 €</strong> très bientôt
   <span class="pip"></span>
 </div>
 
