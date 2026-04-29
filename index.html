@@ -41,10 +41,13 @@ body {
   background: var(--dark-brown);
   color: var(--beige);
   text-align: center;
-  padding: 10px 16px;
-  font-size: 12px;
-  letter-spacing: 0.08em;
+  padding: 8px 12px;
+  font-size: 11px;
+  letter-spacing: 0.05em;
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .sticky-banner span { color: var(--taupe); }
 .sticky-banner strong { color: white; }
@@ -52,7 +55,7 @@ body {
 /* TIMER BAR */
 .timer-bar {
   position: fixed;
-  top: 38px;
+  top: 34px;
   left: 0;
   right: 0;
   z-index: 999;
@@ -574,7 +577,7 @@ footer {
 
 <!-- STICKY BANNER -->
 <div class="sticky-banner">
-  PRIX ACTUEL : <strong>350 €</strong> &nbsp;·&nbsp; PASSE À <span>497 €</span> DEMAIN À 21H
+  PRIX ACTUEL : <strong>350 €</strong> &nbsp;·&nbsp; PASSE À <span>497 €</span> AUJOURD'HUI À 21H
 </div>
 
 <!-- TIMER BAR -->
@@ -593,13 +596,18 @@ footer {
 <main>
 
 <!-- HERO -->
-<section style="background:var(--beige-light); padding: 48px 24px 40px; text-align:center; max-width:640px; margin:0 auto;">
-  <div style="display:inline-block; font-size:11px; letter-spacing:0.2em; color:var(--text-light); border:1px solid var(--border); padding:5px 14px; border-radius:20px; margin-bottom:24px; text-transform:uppercase;">Formation · Marketing Digital</div>
-  <h1 style="font-family:'Cormorant Garamond',serif; font-size:46px; font-weight:400; line-height:1.1; color:var(--dark-brown); margin-bottom:16px;">
-    Génère des revenus<br>depuis ton <em style="font-style:italic; color:var(--taupe-dark);">téléphone</em>
+<section style="background:var(--beige-light); padding: 52px 28px 44px; text-align:center; max-width:600px; margin:0 auto;">
+  <div style="display:inline-block; font-size:10px; letter-spacing:0.22em; color:var(--text-light); border:1px solid var(--border); padding:5px 14px; border-radius:20px; margin-bottom:32px; text-transform:uppercase;">Formation · Marketing Digital</div>
+
+  <h1 style="margin-bottom:28px; padding:0;">
+    <span style="display:block; font-family:'Cormorant Garamond',serif; font-size:52px; font-weight:400; line-height:1.1; color:var(--dark-brown); letter-spacing:-0.01em; margin-bottom:10px;">De zéro à ta première<br>vente en ligne</span>
+    <span style="display:block; font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:300; font-style:italic; color:var(--taupe-dark); line-height:1.3;">avec juste ton téléphone</span>
   </h1>
-  <p style="font-size:16px; color:var(--text-mid); line-height:1.7; margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto;">
-    Je vais t'expliquer comment créer ou revendre des produits digitaux — même si tu pars de zéro, même si tu as peur de te lancer.
+
+  <p style="font-size:17px; color:#7A2A2A; font-weight:500; margin-bottom:24px; max-width:420px; margin-left:auto; margin-right:auto; line-height:1.65; letter-spacing:0.01em;">Tu regardes… mais tu ne vends pas ?</p>
+
+  <p style="font-size:15px; color:var(--mid-brown); line-height:1.85; margin-bottom:0; max-width:400px; margin-left:auto; margin-right:auto;">
+    Tu pars de zéro. Aucune expérience. Aucune audience.<br>Pas de problème. Je t'explique exactement quoi faire, étape par étape, depuis ton téléphone.
   </p>
 
 </section>
@@ -612,11 +620,11 @@ footer {
       <iframe src="https://www.youtube.com/embed/IOtGc6Ot9Lo?rel=0&modestbranding=1" style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" allowfullscreen></iframe>
     </div>
     <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(196,184,168,0.2); border-radius:3px; padding:20px; text-align:center;">
-      <div style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red-accent); margin-bottom:8px; font-weight:500;">⚠️ Augmentation de prix demain à 21h</div>
+      <div style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red-accent); margin-bottom:8px; font-weight:500;">⚠️ Augmentation de prix aujourd'hui à 21h</div>
       <div style="font-size:15px; color:var(--taupe); text-decoration:line-through; margin-bottom:4px;">Bientôt : 497 €</div>
       <div style="font-family:'Cormorant Garamond',serif; font-size:56px; font-weight:400; color:white; line-height:1; margin-bottom:4px;">350 €</div>
-      <div style="font-size:11px; color:var(--taupe); margin-bottom:18px;">Prix garanti jusqu'à demain 21h uniquement</div>
-      <a href="https://noiradigital.com/shop/925885c8-532d-4d16-bbd3-b2f0ab1376fb" style="display:block; background:var(--beige); color:var(--dark-brown); padding:16px 24px; text-align:center; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:2px; margin-bottom:8px;">REJOINDRE CODE LIBERTÉ — 350 €</a>
+      <div style="font-size:11px; color:var(--taupe); margin-bottom:18px;">Prix garanti jusqu'à ce soir 21h uniquement</div>
+      <a href="https://noiradigital.com/shop/925885c8-532d-4d16-bbd3-b2f0ab1376fb" style="display:block; background:var(--beige); color:var(--dark-brown); padding:16px 24px; text-align:center; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:2px; margin-bottom:8px;">JE COMMENCE MAINTENANT</a>
       <div style="font-size:11px; color:var(--taupe); opacity:0.7;">Accès immédiat · Paiement sécurisé</div>
     </div>
   </div>
@@ -658,6 +666,20 @@ footer {
   </div>
 </section>
 
+
+<!-- PSYCHO -->
+<section style="background:var(--beige-light); padding:32px 24px;">
+  <div style="max-width:560px; margin:0 auto; text-align:center;">
+    <p style="font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:300; color:var(--dark-brown); line-height:1.6; margin-bottom:12px;">
+      Le problème, ce n'est pas toi.
+    </p>
+    <p style="font-size:15px; color:var(--text-mid); line-height:1.75; max-width:440px; margin:0 auto;">
+      C'est que personne ne t'a montré un système simple à suivre.<br>
+      Pas de jargon. Pas de grandes promesses. Juste les étapes dans l'ordre.
+    </p>
+  </div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section style="padding:48px 24px; max-width:640px; margin:0 auto;">
   <div style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-light); margin-bottom:12px;">Le modèle</div>
@@ -667,30 +689,78 @@ footer {
   <div>
     <div style="display:flex; gap:16px; padding:20px 0; border-bottom:1px solid var(--border);">
       <div style="font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:300; color:var(--taupe); min-width:28px; line-height:1;">01</div>
-      <div><div style="font-size:15px; font-weight:500; color:var(--dark-brown); margin-bottom:4px;">Tu rejoins Code Liberté</div><div style="font-size:13px; color:var(--text-mid); line-height:1.7;">Tu accèdes à la formation complète : créer ta boutique en ligne, publier sur les réseaux, vendre des produits digitaux — ebooks, formations, templates, PDFs.</div></div>
+      <div><div style="font-size:15px; font-weight:500; color:var(--dark-brown); margin-bottom:4px;">Tu accèdes à la formation</div><div style="font-size:13px; color:var(--text-mid); line-height:1.7;">Dès l'achat, tu as accès à tout. Modules vidéo, templates, boutique à copier-coller. Tu suis les étapes dans l'ordre — c'est fait pour les débutants.</div></div>
     </div>
     <div style="display:flex; gap:16px; padding:20px 0; border-bottom:1px solid var(--border);">
       <div style="font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:300; color:var(--taupe); min-width:28px; line-height:1;">02</div>
-      <div><div style="font-size:15px; font-weight:500; color:var(--dark-brown); margin-bottom:4px;">Pas de stock. Pas de livraison. Tout automatisé.</div><div style="font-size:13px; color:var(--text-mid); line-height:1.7;">Quand quelqu'un achète, le produit arrive directement dans sa boîte mail. Tu crées ou acquiers un fichier une seule fois — tu le revends à l'infini.</div></div>
+      <div><div style="font-size:15px; font-weight:500; color:var(--dark-brown); margin-bottom:4px;">Tu vends un fichier numérique — une seule fois, à l'infini</div><div style="font-size:13px; color:var(--text-mid); line-height:1.7;">Pas de stock. Pas de livraison. Quand quelqu'un achète, le produit part automatiquement dans sa boîte mail. Toi, tu n'as rien à faire.</div></div>
     </div>
     <div style="display:flex; gap:16px; padding:20px 0; border-bottom:1px solid var(--border);">
       <div style="font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:300; color:var(--taupe); min-width:28px; line-height:1;">03</div>
-      <div><div style="font-size:15px; font-weight:500; color:var(--dark-brown); margin-bottom:4px;">Tu revends la formation et touches 90% de chaque vente</div><div style="font-size:13px; color:var(--text-mid); line-height:1.7;">En passant par moi, tu débloques les droits d'affiliation. Chaque vente que tu génères te rapporte <strong>~447 €</strong> (90% de 497€). Dès la 1ère vente, ton investissement est remboursé.</div></div>
+      <div><div style="font-size:15px; font-weight:500; color:var(--dark-brown); margin-bottom:4px;">Tu touches 90% de chaque vente</div><div style="font-size:13px; color:var(--text-mid); line-height:1.7;">Tu revends cette même formation. Chaque vente te rapporte environ 447€. Dès la 1ère vente — ton investissement est remboursé. Tout le reste va dans ta poche.</div></div>
     </div>
     <div style="display:flex; gap:16px; padding:20px 0;">
       <div style="font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:300; color:var(--taupe); min-width:28px; line-height:1;">04</div>
-      <div><div style="font-size:15px; font-weight:500; color:var(--dark-brown); margin-bottom:4px;">Tu peux aussi créer ton propre produit</div><div style="font-size:13px; color:var(--text-mid); line-height:1.7;">Peu importe ta passion — sport, cuisine, bien-être, business — la formation t'apprend à créer un produit dessus et le vendre.</div></div>
+      <div><div style="font-size:15px; font-weight:500; color:var(--dark-brown); margin-bottom:4px;">Tu peux aussi créer ton propre produit</div><div style="font-size:13px; color:var(--text-mid); line-height:1.7;">Sport, cuisine, bien-être, business — peu importe ta passion. La formation t'apprend à créer un produit dessus et le vendre.</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 7 JOURS -->
+<section style="background:var(--beige); padding:48px 24px;">
+  <div style="max-width:640px; margin:0 auto;">
+    <div style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-light); margin-bottom:12px;">Concrètement</div>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:400; color:var(--dark-brown); line-height:1.15; margin-bottom:28px;">
+      Ce que tu fais<br><em style="font-style:italic; color:var(--taupe-dark);">en 7 jours</em>
+    </h2>
+    <div>
+      <div style="display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--border); align-items:flex-start;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--taupe); min-width:56px; font-weight:300;">J1</div>
+        <div><div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu rejoins et tu accèdes à tout</div><div style="font-size:13px; color:var(--text-mid);">Accès immédiat à la formation + tu m'envoies un message. On se présente et je te dis par où commencer selon ta situation.</div></div>
+      </div>
+      <div style="display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--border); align-items:flex-start;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--taupe); min-width:56px; font-weight:300;">J2</div>
+        <div><div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu regardes les modules essentiels</div><div style="font-size:13px; color:var(--text-mid);">Tu commences par le module MRR + boutique. 2h max. Tu comprends exactement comment l'argent rentre.</div></div>
+      </div>
+      <div style="display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--border); align-items:flex-start;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--taupe); min-width:56px; font-weight:300;">J3</div>
+        <div><div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu crées ta boutique en ligne</div><div style="font-size:13px; color:var(--text-mid);">Étape par étape, avec les templates fournis. En moins de 2h, tu as un lien de vente qui fonctionne.</div></div>
+      </div>
+      <div style="display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--border); align-items:flex-start;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--taupe); min-width:56px; font-weight:300;">J4</div>
+        <div><div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu crées ton compte Instagram ou TikTok</div><div style="font-size:13px; color:var(--text-mid);">Je t'aide à définir ton message et ton univers. Tu postes ton premier contenu — un b-roll avec texte, sans montrer ton visage si tu veux.</div></div>
+      </div>
+      <div style="display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--border); align-items:flex-start;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--taupe); min-width:56px; font-weight:300;">J5</div>
+        <div><div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu commences à attirer des prospects</div><div style="font-size:13px; color:var(--text-mid);">Tu postes chaque jour. Tu réponds aux DMs. Tu apprends à qualifier et à proposer un appel ou un lien direct.</div></div>
+      </div>
+      <div style="display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--border); align-items:flex-start;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--taupe); min-width:56px; font-weight:300;">J6</div>
+        <div><div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu affines avec moi</div><div style="font-size:13px; color:var(--text-mid);">Je regarde ton compte, je te dis exactement ce qui fonctionne et ce qu'on ajuste. Tu n'avances pas à l'aveugle.</div></div>
+      </div>
+      <div style="display:flex; gap:16px; padding:16px 0; align-items:flex-start;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--taupe); min-width:56px; font-weight:300;">J7</div>
+        <div><div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu es prête à faire ta première vente</div><div style="font-size:13px; color:var(--text-mid);">Boutique en ligne active. Contenu qui tourne. Système en place. Certains membres font leur première vente dès ce stade.</div></div>
+      </div>
+    </div>
+    <div style="margin-top:24px; padding:16px; background:rgba(139,122,110,0.08); border-left:2px solid var(--taupe-dark); border-radius:0 3px 3px 0;">
+      <p style="font-size:15px; color:var(--dark-brown); font-style:italic; line-height:1.7; margin:0;">Tu ne seras plus en train de regarder des vidéos.<br>Tu seras en train d'agir.</p>
+    </div>
+    <div style="margin-top:24px; text-align:center;">
+      <a href="https://noiradigital.com/shop/925885c8-532d-4d16-bbd3-b2f0ab1376fb" style="display:inline-block; background:var(--dark-brown); color:var(--beige); padding:14px 32px; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:2px;">JE COMMENCE MAINTENANT</a>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section style="background:var(--beige); padding:48px 24px;">
+<section style="background:var(--beige-light); padding:48px 24px;">
   <div style="max-width:640px; margin:0 auto;">
     <div style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-light); margin-bottom:12px;">Ils sont passés à l'action</div>
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:400; color:var(--dark-brown); line-height:1.15; margin-bottom:28px;">
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:400; color:var(--dark-brown); line-height:1.15; margin-bottom:16px;">
       Des résultats réels,<br>de <em style="font-style:italic; color:var(--taupe-dark);">vraies personnes</em>
     </h2>
+    <p style="font-size:14px; color:var(--text-mid); line-height:1.7; margin-bottom:24px;">Ces personnes ont commencé exactement comme toi. Zéro expérience. Zéro audience. Certaines ont fait leur première vente en quelques jours. D'autres en quelques semaines. Les résultats dépendent de l'implication. Mais le système, lui, fonctionne.</p>
     <div style="display:flex; flex-direction:column; gap:10px;">
       <div style="background:white; border:1px solid var(--border); border-radius:3px; padding:16px 20px;"><div style="font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:400; color:var(--dark-brown); margin-bottom:6px;">1ère vente en 3 jours</div><div style="font-size:13px; color:var(--text-mid); font-style:italic; line-height:1.7;">"De 0 à ma première vente en 3 jours... et ce n'est que le début."</div></div>
       <div style="background:white; border:1px solid var(--border); border-radius:3px; padding:16px 20px;"><div style="font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:400; color:var(--dark-brown); margin-bottom:6px;">700 € en une matinée</div><div style="font-size:13px; color:var(--text-mid); font-style:italic; line-height:1.7;">"Ce n'est que le début, mais une chose est sûre : je ne reviendrai jamais en arrière."</div></div>
@@ -771,16 +841,16 @@ footer {
       <div class="faq-answer">Non, absolument pas. Tu peux créer du contenu et vendre tes produits digitaux sans jamais montrer ton visage — en faceless ou avec des b-rolls. La formation t'apprend les deux méthodes.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">Je dois y consacrer combien de temps ? <span class="faq-arrow">↓</span></button>
-      <div class="faq-answer">Tu peux avancer à ton rythme. Avec 1h par jour, tu peux obtenir des résultats significatifs. La formation est conçue pour s'adapter à ton emploi du temps — que tu sois étudiant(e), salarié(e) ou en reconversion.</div>
+      <button class="faq-question" onclick="toggleFaq(this)">Je n'ai pas beaucoup de temps — c'est réaliste ? <span class="faq-arrow">↓</span></button>
+      <div class="faq-answer">1h par jour suffit pour démarrer. Pas 5h, pas un job à temps plein — 1h. Tu peux le faire entre deux cours, le soir, le week-end. J'avance encore aujourd'hui à côté de ma vie normale. Le business ne s'arrête pas quand tu t'arrêtes.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">Et si je ne fais pas de ventes ? <span class="faq-arrow">↓</span></button>
-      <div class="faq-answer">Je t'accompagne jusqu'à ta première vente et bien au-delà. Tu n'es pas livrée à toi-même — je suis là en direct, par message, pour débloquer chaque étape. Si tu appliques les stratégies, les résultats suivront.</div>
+      <button class="faq-question" onclick="toggleFaq(this)">Et si ça ne marche pas pour moi ? <span class="faq-arrow">↓</span></button>
+      <div class="faq-answer">Je comprends le doute — il y a beaucoup de trucs en ligne qui promettent la lune. Ce qui est différent ici : je suis là avec toi. Je t'accompagne jusqu'à ta première vente, par message, en direct. Des membres font leur première vente en 3 jours. D'autres en 3 semaines. Ça dépend de toi — mais tu n'es jamais seule.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">Faut-il des compétences techniques ? <span class="faq-arrow">↓</span></button>
-      <div class="faq-answer">Aucune compétence n'est requise. La formation est conçue pour les débutants complets. On t'apprend tout de A à Z, de la création de ton produit digital à la génération de tes premières ventes.</div>
+      <button class="faq-question" onclick="toggleFaq(this)">Je suis complète débutante — c'est vraiment pour moi ? <span class="faq-arrow">↓</span></button>
+      <div class="faq-answer">Oui. Moi j'avais zéro expérience quand j'ai commencé. La formation part de zéro — tu n'as rien à savoir avant. Chaque étape est expliquée simplement. Si tu sais utiliser ton téléphone, tu peux faire ça.</div>
     </div>
     <div class="faq-item">
       <button class="faq-question" onclick="toggleFaq(this)">Je peux espérer faire combien ? <span class="faq-arrow">↓</span></button>
@@ -803,14 +873,15 @@ footer {
     <h2 style="font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:300; color:var(--beige); margin-bottom:8px; line-height:1.2;">
       Prête à <em style="font-style:italic; color:var(--taupe);">commencer ?</em>
     </h2>
+    <p style="font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:300; color:var(--beige); line-height:1.7; margin-bottom:12px; font-style:italic;">"Dans 7 jours, soit tu es exactement au même point…<br>soit tu as lancé ton système et tu te rapproches de ta première vente."</p>
     <p style="font-size:14px; color:var(--taupe); margin-bottom:32px; line-height:1.7;">
-      Le prix est encore à 350€ jusqu'à ce soir 21h.<br>Dès qu'il passe à 497€, ce tarif ne reviendra pas.<br>La seule vraie question : tu attends encore, ou tu agis maintenant ?
+      Le prix est encore à 350€ jusqu'à ce soir 21h.<br>Dès qu'il passe à 497€, ce tarif ne reviendra pas.
     </p>
     <div style="font-size:18px; color:var(--taupe); text-decoration:line-through; margin-bottom:4px;">Bientôt : 497 €</div>
     <div style="font-family:'Cormorant Garamond',serif; font-size:72px; font-weight:300; color:white; line-height:1; margin-bottom:4px;">350 €</div>
     <div style="font-size:11px; color:var(--taupe); margin-bottom:24px; letter-spacing:0.08em; text-transform:uppercase;">Prix en hausse imminente</div>
-    <a href="https://noiradigital.com/shop/925885c8-532d-4d16-bbd3-b2f0ab1376fb" style="display:block; background:var(--beige); color:var(--dark-brown); padding:18px 24px; text-align:center; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:2px; margin-bottom:12px;">REJOINDRE CODE LIBERTÉ — 350 €</a>
-    <div style="font-size:12px; color:var(--taupe); opacity:0.7;">Accès immédiat · Prix garanti aujourd'hui uniquement<br>Des questions ? Écris-moi directement sur Instagram</div>
+    <a href="https://noiradigital.com/shop/925885c8-532d-4d16-bbd3-b2f0ab1376fb" style="display:block; background:var(--beige); color:var(--dark-brown); padding:18px 24px; text-align:center; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:2px; margin-bottom:12px;">JE FAIS MA PREMIÈRE VENTE</a>
+    <div style="font-size:12px; color:var(--taupe); opacity:0.7;">Accès immédiat · Prix garanti jusqu'à ce soir 21h<br>Des questions ? DM moi sur Instagram</div>
   </div>
 </section>
 
