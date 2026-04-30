@@ -32,23 +32,7 @@ body {
 }
 
 /* STICKY BANNER */
-.sticky-banner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: var(--dark-brown);
-  color: var(--beige);
-  text-align: center;
-  padding: 8px 12px;
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  font-weight: 500;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+
 .sticky-banner span { color: var(--taupe); }
 .sticky-banner strong { color: white; }
 
@@ -89,7 +73,7 @@ body {
 .timer-sep { opacity: 0.6; font-size: 14px; }
 
 /* MAIN */
-main { padding-top: 76px; }
+main { padding-top: 0; }
 
 /* HERO */
 .hero {
@@ -575,24 +559,6 @@ footer {
 </head>
 <body>
 
-<!-- STICKY BANNER -->
-<div class="sticky-banner">
-  PRIX ACTUEL : <strong>350 €</strong> &nbsp;·&nbsp; PASSE À <span>497 €</span> AUJOURD'HUI À 21H
-</div>
-
-<!-- TIMER BAR -->
-<div class="timer-bar">
-  <span class="timer-label">Il reste</span>
-  <div class="timer-digits">
-    <div class="timer-unit" id="t-h">00</div>
-    <span class="timer-sep">:</span>
-    <div class="timer-unit" id="t-m">00</div>
-    <span class="timer-sep">:</span>
-    <div class="timer-unit" id="t-s">00</div>
-  </div>
-  <span class="timer-label">avant augmentation</span>
-</div>
-
 <main>
 
 <!-- HERO -->
@@ -620,11 +586,10 @@ footer {
       <iframe src="https://www.youtube.com/embed/IOtGc6Ot9Lo?rel=0&modestbranding=1" style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" allowfullscreen></iframe>
     </div>
     <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(196,184,168,0.2); border-radius:3px; padding:20px; text-align:center;">
-      <div style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red-accent); margin-bottom:8px; font-weight:500;">⚠️ Augmentation de prix aujourd'hui à 21h</div>
-      <div style="font-size:15px; color:var(--taupe); text-decoration:line-through; margin-bottom:4px;">Bientôt : 497 €</div>
-      <div style="font-family:'Cormorant Garamond',serif; font-size:56px; font-weight:400; color:white; line-height:1; margin-bottom:4px;">350 €</div>
-      <div style="font-size:11px; color:var(--taupe); margin-bottom:18px;">Prix garanti jusqu'à ce soir 21h uniquement</div>
-      <a href="https://noiradigital.com/shop/925885c8-532d-4d16-bbd3-b2f0ab1376fb" style="display:block; background:var(--beige); color:var(--dark-brown); padding:16px 24px; text-align:center; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:2px; margin-bottom:8px;">JE COMMENCE MAINTENANT</a>
+      <div style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red-accent); margin-bottom:8px; font-weight:500;"> </div>
+      <div style="font-family:'Cormorant Garamond',serif; font-size:56px; font-weight:400; color:white; line-height:1; margin-bottom:4px;">497 €</div>
+      <div style="font-size:11px; color:var(--taupe); margin-bottom:18px;">Accès immédiat · Paiement sécurisé</div>
+      <a href="https://noiradigital.com/shop/d7ac9e61-87c6-42ad-bc0a-4fea1e4d22fc?t=1777577758073" style="display:block; background:var(--beige); color:var(--dark-brown); padding:16px 24px; text-align:center; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:2px; margin-bottom:8px;">JE COMMENCE MAINTENANT</a>
       <div style="font-size:11px; color:var(--taupe); opacity:0.7;">Accès immédiat · Paiement sécurisé</div>
     </div>
   </div>
@@ -748,7 +713,7 @@ footer {
       <p style="font-size:15px; color:var(--dark-brown); font-style:italic; line-height:1.7; margin:0;">Tu ne seras plus en train de regarder des vidéos.<br>Tu seras en train d'agir.</p>
     </div>
     <div style="margin-top:24px; text-align:center;">
-      <a href="https://noiradigital.com/shop/925885c8-532d-4d16-bbd3-b2f0ab1376fb" style="display:inline-block; background:var(--dark-brown); color:var(--beige); padding:14px 32px; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:2px;">JE COMMENCE MAINTENANT</a>
+      <a href="https://noiradigital.com/shop/d7ac9e61-87c6-42ad-bc0a-4fea1e4d22fc?t=1777577758073" style="display:inline-block; background:var(--dark-brown); color:var(--beige); padding:14px 32px; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:2px;">JE COMMENCE MAINTENANT</a>
     </div>
   </div>
 </section>
@@ -860,10 +825,7 @@ footer {
       <button class="faq-question" onclick="toggleFaq(this)">Comment fonctionne l'accompagnement ? <span class="faq-arrow">↓</span></button>
       <div class="faq-answer">En passant par moi, tu bénéficies d'un accompagnement 1:1 personnalisé. Je suis disponible par message, je fais des coachings réguliers et j'analyse ton compte dès le lancement. Tu n'es jamais seul(e).</div>
     </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">Pourquoi le prix augmente ce soir ? <span class="faq-arrow">↓</span></button>
-      <div class="faq-answer">La créatrice de Code Liberté augmente le prix de la formation à 497€ ce soir à 21h définitivement. Après cette heure, il ne sera plus possible de la rejoindre à 350€. C'est maintenant ou plus cher.</div>
-    </div>
+    
   </div>
 </section>
 
@@ -875,13 +837,12 @@ footer {
     </h2>
     <p style="font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:300; color:var(--beige); line-height:1.7; margin-bottom:12px; font-style:italic;">"Dans 7 jours, soit tu es exactement au même point…<br>soit tu as lancé ton système et tu te rapproches de ta première vente."</p>
     <p style="font-size:14px; color:var(--taupe); margin-bottom:32px; line-height:1.7;">
-      Le prix est encore à 350€ jusqu'à ce soir 21h.<br>Dès qu'il passe à 497€, ce tarif ne reviendra pas.
+       .<br>
     </p>
-    <div style="font-size:18px; color:var(--taupe); text-decoration:line-through; margin-bottom:4px;">Bientôt : 497 €</div>
-    <div style="font-family:'Cormorant Garamond',serif; font-size:72px; font-weight:300; color:white; line-height:1; margin-bottom:4px;">350 €</div>
-    <div style="font-size:11px; color:var(--taupe); margin-bottom:24px; letter-spacing:0.08em; text-transform:uppercase;">Prix en hausse imminente</div>
-    <a href="https://noiradigital.com/shop/925885c8-532d-4d16-bbd3-b2f0ab1376fb" style="display:block; background:var(--beige); color:var(--dark-brown); padding:18px 24px; text-align:center; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:2px; margin-bottom:12px;">JE FAIS MA PREMIÈRE VENTE</a>
-    <div style="font-size:12px; color:var(--taupe); opacity:0.7;">Accès immédiat · Prix garanti jusqu'à ce soir 21h<br>Des questions ? DM moi sur Instagram</div>
+    <div style="font-family:'Cormorant Garamond',serif; font-size:72px; font-weight:300; color:white; line-height:1; margin-bottom:4px;">497 €</div>
+    <div style="font-size:11px; color:var(--taupe); margin-bottom:24px; letter-spacing:0.08em; text-transform:uppercase;">Accès immédiat</div>
+    <a href="https://noiradigital.com/shop/d7ac9e61-87c6-42ad-bc0a-4fea1e4d22fc?t=1777577758073" style="display:block; background:var(--beige); color:var(--dark-brown); padding:18px 24px; text-align:center; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:2px; margin-bottom:12px;">JE FAIS MA PREMIÈRE VENTE</a>
+    <div style="font-size:12px; color:var(--taupe); opacity:0.7;">Accès immédiat · Prix garanti <br>Des questions ? DM moi sur Instagram</div>
   </div>
 </section>
 
@@ -890,33 +851,7 @@ footer {
 </main>
 
 <script>
-// TIMER — calcule jusqu'au 30 avril 2026 à 21h00 heure de Paris/Bruxelles
-function updateTimer() {
-  const now = new Date();
-  // Target: 30 avril 2026 à 21h00 heure Europe/Brussels (UTC+2 en été)
-  const target = new Date('2026-04-30T21:00:00+02:00');
-  const diff = target - now;
 
-  if (diff <= 0) {
-    document.getElementById('t-h').textContent = '00';
-    document.getElementById('t-m').textContent = '00';
-    document.getElementById('t-s').textContent = '00';
-    // Mettre à jour le prix affiché
-    document.querySelector('.sticky-banner').innerHTML = 'LE PRIX A AUGMENTÉ — <strong>497 €</strong>';
-    return;
-  }
-
-  const h = Math.floor(diff / 1000 / 3600);
-  const m = Math.floor((diff / 1000 % 3600) / 60);
-  const s = Math.floor(diff / 1000 % 60);
-
-  document.getElementById('t-h').textContent = String(h).padStart(2, '0');
-  document.getElementById('t-m').textContent = String(m).padStart(2, '0');
-  document.getElementById('t-s').textContent = String(s).padStart(2, '0');
-}
-
-updateTimer();
-setInterval(updateTimer, 1000);
 
 // FAQ
 function toggleFaq(btn) {
