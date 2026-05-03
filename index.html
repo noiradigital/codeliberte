@@ -156,7 +156,7 @@ main { padding-top: 0; }
 .btn-primary {
   display: block;
   width: 100%;
-  background: var(--dark-brown);
+  background: var(--mid-brown);
   color: var(--beige);
   padding: 16px 24px;
   text-align: center;
@@ -168,11 +168,11 @@ main { padding-top: 0; }
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
   border-radius: 2px;
   margin-bottom: 10px;
 }
-.btn-primary:hover { background: var(--mid-brown); }
+.btn-primary:hover { background: var(--taupe-dark); transform: translateY(-1px); }
 .btn-note {
   font-size: 11px;
   color: var(--text-light);
@@ -555,26 +555,214 @@ footer {
   color: var(--text-light);
   border-top: 1px solid var(--border);
 }
+
+/* ANIMATIONS */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-up-delay-1 { transition-delay: 0.1s; }
+.fade-up-delay-2 { transition-delay: 0.2s; }
+.fade-up-delay-3 { transition-delay: 0.3s; }
+
+/* PROGRESS BAR */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--dark-brown);
+  z-index: 2000;
+  transition: width 0.15s ease;
+  width: 0%;
+  border-radius: 0 2px 2px 0;
+}
+
+/* IMPROVED BUTTONS */
+.btn-primary, a[style*="background:var(--dark-brown)"], a[style*="background:var(--beige)"] {
+  transition: transform 0.2s ease, opacity 0.2s ease !important;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+/* IMPROVED CARDS */
+.testi-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.testi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+/* STEP NUMBERS */
+.step-num-big {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 80px;
+  font-weight: 300;
+  color: rgba(196,184,168,0.15);
+  line-height: 1;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  pointer-events: none;
+}
+
+/* SECTION DIVIDERS */
+.wave-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--taupe), transparent);
+  margin: 0;
+  opacity: 0.4;
+}
+
+/* 7 DAYS TIMELINE */
+.timeline-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+  transition: background 0.2s ease;
+}
+.timeline-item:hover {
+  background: rgba(196,184,168,0.04);
+  border-radius: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.timeline-day {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 32px;
+  color: rgba(181,168,152,0.4);
+  min-width: 56px;
+  font-weight: 300;
+  line-height: 1;
+  padding-top: 2px;
+}
+.timeline-content .day-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark-brown);
+  margin-bottom: 3px;
+}
+.timeline-content .day-body {
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+/* NEEDS GRID IMPROVED */
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-mid);
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(139,122,110,0.08);
+  line-height: 1.5;
+}
+.check-item:last-child { border-bottom: none; }
+.check-icon {
+  font-size: 11px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* STAT NUMBERS */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+.stat-box {
+  background: white;
+  padding: 16px 12px;
+  text-align: center;
+}
+.stat-num {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--dark-brown);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-lbl {
+  font-size: 10px;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* FLOATING CTA */
+.floating-cta {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 500;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.floating-cta.show {
+  opacity: 1;
+  pointer-events: all;
+}
+.floating-cta a {
+  display: block;
+  background: var(--mid-brown);
+  color: var(--beige);
+  padding: 14px 28px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 40px;
+  box-shadow: 0 8px 32px rgba(74,63,56,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.floating-cta a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(45,36,32,0.3);
+}
 </style>
 </head>
 <body>
 
+<div class="progress-bar" id="progressBar"></div>
+<div class="floating-cta" id="floatingCta">
+  <a href="https://noiradigital.com/shop/d7ac9e61-87c6-42ad-bc0a-4fea1e4d22fc?t=1777577758073">JE COMMENCE MAINTENANT</a>
+</div>
 <main>
 
 <!-- HERO -->
-<section style="background:var(--beige-light); padding: 52px 28px 44px; text-align:center; max-width:600px; margin:0 auto;">
-  <div style="display:inline-block; font-size:10px; letter-spacing:0.22em; color:var(--text-light); border:1px solid var(--border); padding:5px 14px; border-radius:20px; margin-bottom:32px; text-transform:uppercase;">Formation · Marketing Digital</div>
+<section style="background:var(--beige-light); padding: 48px 28px 40px; max-width:600px; margin:0 auto; text-align:left;">
 
-  <h1 style="margin-bottom:28px; padding:0;">
-    <span style="display:block; font-family:'Cormorant Garamond',serif; font-size:52px; font-weight:400; line-height:1.1; color:var(--dark-brown); letter-spacing:-0.01em; margin-bottom:10px;">De zéro à ta première<br>vente en ligne</span>
-    <span style="display:block; font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:300; font-style:italic; color:var(--taupe-dark); line-height:1.3;">avec juste ton téléphone</span>
+  <div style="display:inline-block; font-size:10px; letter-spacing:0.22em; color:var(--text-light); border:1px solid var(--border); padding:5px 14px; border-radius:20px; margin-bottom:28px; text-transform:uppercase;">Formation · Marketing Digital</div>
+
+  <h1 style="margin-bottom:20px; padding:0;">
+    <span style="display:block; font-family:'Cormorant Garamond',serif; font-size:50px; font-weight:400; line-height:1.08; color:var(--dark-brown); letter-spacing:-0.01em; margin-bottom:8px;">De zéro à ta première<br>vente en ligne</span>
+    <span style="display:block; font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:300; font-style:italic; color:var(--taupe-dark); line-height:1.3;">avec juste ton téléphone</span>
   </h1>
 
-  <p style="font-size:17px; color:#7A2A2A; font-weight:500; margin-bottom:24px; max-width:420px; margin-left:auto; margin-right:auto; line-height:1.65; letter-spacing:0.01em;">Tu regardes… mais tu ne vends pas ?</p>
+  <div style="width:40px; height:2px; background:var(--taupe); margin-bottom:20px; opacity:0.5;"></div>
 
-  <p style="font-size:15px; color:var(--mid-brown); line-height:1.85; margin-bottom:0; max-width:400px; margin-left:auto; margin-right:auto;">
-    Tu pars de zéro. Aucune expérience. Aucune audience.<br>Pas de problème. Je t'explique exactement quoi faire, étape par étape, depuis ton téléphone.
-  </p>
+  <p style="font-size:16px; color:var(--dark-brown); font-weight:400; margin-bottom:0; line-height:1.5; text-align:left;">Tu vois des gens réussir en ligne… mais toi tu sais pas encore par où commencer.</p>
 
 </section>
 
@@ -587,14 +775,13 @@ footer {
     </div>
     <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(196,184,168,0.2); border-radius:3px; padding:20px; text-align:center;">
       <div style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--red-accent); margin-bottom:8px; font-weight:500;"> </div>
-      <div style="font-family:'Cormorant Garamond',serif; font-size:56px; font-weight:400; color:white; line-height:1; margin-bottom:4px;">497 €</div>
-      <div style="font-size:11px; color:var(--taupe); margin-bottom:18px;">Accès immédiat · Paiement sécurisé</div>
       <a href="https://noiradigital.com/shop/d7ac9e61-87c6-42ad-bc0a-4fea1e4d22fc?t=1777577758073" style="display:block; background:var(--beige); color:var(--dark-brown); padding:16px 24px; text-align:center; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:2px; margin-bottom:8px;">JE COMMENCE MAINTENANT</a>
-      <div style="font-size:11px; color:var(--taupe); opacity:0.7;">Accès immédiat · Paiement sécurisé</div>
+      <div style="font-size:11px; color:var(--taupe); opacity:0.7; margin-top:4px;">Accès immédiat · Paiement sécurisé</div>
     </div>
   </div>
 </section>
 
+<div class="wave-divider"></div>
 <!-- CHOICE -->
 <section style="padding:48px 24px; max-width:640px; margin:0 auto;">
   <div style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-light); margin-bottom:12px;">Tu as le choix</div>
@@ -615,6 +802,7 @@ footer {
   </div>
 </section>
 
+<div class="wave-divider"></div>
 <!-- STORY -->
 <section style="background:var(--dark-brown); padding:48px 24px; color:var(--beige);">
   <div style="max-width:540px; margin:0 auto;">
@@ -639,8 +827,7 @@ footer {
       Le problème, ce n'est pas toi.
     </p>
     <p style="font-size:15px; color:var(--text-mid); line-height:1.75; max-width:440px; margin:0 auto;">
-      C'est que personne ne t'a montré un système simple à suivre.<br>
-      Pas de jargon. Pas de grandes promesses. Juste les étapes dans l'ordre.
+      C'est que personne ne t'a encore montré comment faire, étape par étape, simplement.
     </p>
   </div>
 </section>
@@ -672,48 +859,88 @@ footer {
 </section>
 
 
+<div class="wave-divider"></div>
 <!-- 7 JOURS -->
 <section style="background:var(--beige); padding:48px 24px;">
   <div style="max-width:640px; margin:0 auto;">
-    <div style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-light); margin-bottom:12px;">Concrètement</div>
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:400; color:var(--dark-brown); line-height:1.15; margin-bottom:28px;">
+    <div class="fade-up" style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-light); margin-bottom:12px;">Concrètement</div>
+    <h2 class="fade-up" style="font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:400; color:var(--dark-brown); line-height:1.15; margin-bottom:32px;">
       Ce que tu fais<br><em style="font-style:italic; color:var(--taupe-dark);">en 7 jours</em>
     </h2>
-    <div>
-      <div style="display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--border); align-items:flex-start;">
-        <div style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--taupe); min-width:56px; font-weight:300;">J1</div>
-        <div><div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu rejoins et tu accèdes à tout</div><div style="font-size:13px; color:var(--text-mid);">Accès immédiat à la formation + tu m'envoies un message. On se présente et je te dis par où commencer selon ta situation.</div></div>
+
+    <div style="position:relative; padding-left:28px; border-left:1px solid var(--border);">
+
+      <div class="fade-up" style="position:relative; margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(139,122,110,0.08);">
+        <div style="position:absolute; left:-37px; width:18px; height:18px; border-radius:50%; background:var(--beige); border:1px solid var(--taupe); display:flex; align-items:center; justify-content:center; top:4px;">
+          <div style="width:6px; height:6px; border-radius:50%; background:var(--taupe);"></div>
+        </div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:11px; color:var(--taupe); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:4px;">Jour 1</div>
+        <div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu rejoins et tu accèdes à tout</div>
+        <div style="font-size:13px; color:var(--text-mid); line-height:1.6;">Accès immédiat à la formation. Tu m'envoies un message. On se présente et je te dis par où commencer selon ta situation.</div>
       </div>
-      <div style="display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--border); align-items:flex-start;">
-        <div style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--taupe); min-width:56px; font-weight:300;">J2</div>
-        <div><div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu regardes les modules essentiels</div><div style="font-size:13px; color:var(--text-mid);">Tu commences par le module MRR + boutique. 2h max. Tu comprends exactement comment l'argent rentre.</div></div>
+
+      <div class="fade-up fade-up-delay-1" style="position:relative; margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(139,122,110,0.08);">
+        <div style="position:absolute; left:-37px; width:18px; height:18px; border-radius:50%; background:var(--beige); border:1px solid var(--taupe); display:flex; align-items:center; justify-content:center; top:4px;">
+          <div style="width:6px; height:6px; border-radius:50%; background:var(--taupe);"></div>
+        </div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:11px; color:var(--taupe); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:4px;">Jour 2</div>
+        <div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu regardes les modules essentiels</div>
+        <div style="font-size:13px; color:var(--text-mid); line-height:1.6;">Tu regardes les vidéos essentielles. 2h max. Tu comprends exactement comment l'argent rentre.</div>
       </div>
-      <div style="display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--border); align-items:flex-start;">
-        <div style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--taupe); min-width:56px; font-weight:300;">J3</div>
-        <div><div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu crées ta boutique en ligne</div><div style="font-size:13px; color:var(--text-mid);">Étape par étape, avec les templates fournis. En moins de 2h, tu as un lien de vente qui fonctionne.</div></div>
+
+      <div class="fade-up fade-up-delay-2" style="position:relative; margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(139,122,110,0.08);">
+        <div style="position:absolute; left:-37px; width:18px; height:18px; border-radius:50%; background:var(--beige); border:1px solid var(--taupe); display:flex; align-items:center; justify-content:center; top:4px;">
+          <div style="width:6px; height:6px; border-radius:50%; background:var(--taupe);"></div>
+        </div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:11px; color:var(--taupe); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:4px;">Jour 3</div>
+        <div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu crées ta boutique en ligne</div>
+        <div style="font-size:13px; color:var(--text-mid); line-height:1.6;">Étape par étape, avec les templates fournis. En moins de 30 minutes, tu as un lien de vente qui fonctionne.</div>
       </div>
-      <div style="display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--border); align-items:flex-start;">
-        <div style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--taupe); min-width:56px; font-weight:300;">J4</div>
-        <div><div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu crées ton compte Instagram ou TikTok</div><div style="font-size:13px; color:var(--text-mid);">Je t'aide à définir ton message et ton univers. Tu postes ton premier contenu — un b-roll avec texte, sans montrer ton visage si tu veux.</div></div>
+
+      <div class="fade-up" style="position:relative; margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(139,122,110,0.08);">
+        <div style="position:absolute; left:-37px; width:18px; height:18px; border-radius:50%; background:var(--beige); border:1px solid var(--taupe); display:flex; align-items:center; justify-content:center; top:4px;">
+          <div style="width:6px; height:6px; border-radius:50%; background:var(--taupe);"></div>
+        </div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:11px; color:var(--taupe); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:4px;">Jour 4</div>
+        <div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu crées ton compte Instagram ou TikTok</div>
+        <div style="font-size:13px; color:var(--text-mid); line-height:1.6;">Je t'aide à définir ton message. Tu postes ton premier contenu, sans montrer ton visage si tu veux.</div>
       </div>
-      <div style="display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--border); align-items:flex-start;">
-        <div style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--taupe); min-width:56px; font-weight:300;">J5</div>
-        <div><div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu commences à attirer des prospects</div><div style="font-size:13px; color:var(--text-mid);">Tu postes chaque jour. Tu réponds aux DMs. Tu apprends à qualifier et à proposer un appel ou un lien direct.</div></div>
+
+      <div class="fade-up fade-up-delay-1" style="position:relative; margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(139,122,110,0.08);">
+        <div style="position:absolute; left:-37px; width:18px; height:18px; border-radius:50%; background:var(--beige); border:1px solid var(--taupe); display:flex; align-items:center; justify-content:center; top:4px;">
+          <div style="width:6px; height:6px; border-radius:50%; background:var(--taupe);"></div>
+        </div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:11px; color:var(--taupe); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:4px;">Jour 5</div>
+        <div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu commences à attirer des prospects</div>
+        <div style="font-size:13px; color:var(--text-mid); line-height:1.6;">Tu postes chaque jour. Tu réponds aux DMs. Tu apprends à qualifier et proposer un lien direct.</div>
       </div>
-      <div style="display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--border); align-items:flex-start;">
-        <div style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--taupe); min-width:56px; font-weight:300;">J6</div>
-        <div><div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu affines avec moi</div><div style="font-size:13px; color:var(--text-mid);">Je regarde ton compte, je te dis exactement ce qui fonctionne et ce qu'on ajuste. Tu n'avances pas à l'aveugle.</div></div>
+
+      <div class="fade-up fade-up-delay-2" style="position:relative; margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(139,122,110,0.08);">
+        <div style="position:absolute; left:-37px; width:18px; height:18px; border-radius:50%; background:var(--beige); border:1px solid var(--taupe); display:flex; align-items:center; justify-content:center; top:4px;">
+          <div style="width:6px; height:6px; border-radius:50%; background:var(--taupe);"></div>
+        </div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:11px; color:var(--taupe); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:4px;">Jour 6</div>
+        <div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu affines avec moi</div>
+        <div style="font-size:13px; color:var(--text-mid); line-height:1.6;">Je regarde ton compte, je te dis exactement ce qui fonctionne et ce qu'on ajuste. Tu n'avances pas à l'aveugle.</div>
       </div>
-      <div style="display:flex; gap:16px; padding:16px 0; align-items:flex-start;">
-        <div style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--taupe); min-width:56px; font-weight:300;">J7</div>
-        <div><div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu es prête à faire ta première vente</div><div style="font-size:13px; color:var(--text-mid);">Boutique en ligne active. Contenu qui tourne. Système en place. Certains membres font leur première vente dès ce stade.</div></div>
+
+      <div class="fade-up" style="position:relative; margin-bottom:0;">
+        <div style="position:absolute; left:-37px; width:18px; height:18px; border-radius:50%; background:var(--mid-brown); border:1px solid var(--mid-brown); display:flex; align-items:center; justify-content:center; top:4px;">
+          <div style="width:6px; height:6px; border-radius:50%; background:var(--beige);"></div>
+        </div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:11px; color:var(--taupe-dark); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:4px; font-weight:500;">Jour 7</div>
+        <div style="font-size:14px; font-weight:500; color:var(--dark-brown); margin-bottom:3px;">Tu es prête à faire ta première vente</div>
+        <div style="font-size:13px; color:var(--text-mid); line-height:1.6;">Boutique active. Contenu qui tourne. Système en place. Certains membres font leur première vente dès ce stade.</div>
       </div>
+
     </div>
-    <div style="margin-top:24px; padding:16px; background:rgba(139,122,110,0.08); border-left:2px solid var(--taupe-dark); border-radius:0 3px 3px 0;">
-      <p style="font-size:15px; color:var(--dark-brown); font-style:italic; line-height:1.7; margin:0;">Tu ne seras plus en train de regarder des vidéos.<br>Tu seras en train d'agir.</p>
+
+    <div class="fade-up" style="margin-top:24px; padding:16px; background:rgba(139,122,110,0.08); border-left:2px solid var(--taupe-dark); border-radius:0 3px 3px 0;">
+      <p style="font-size:15px; color:var(--dark-brown); font-style:italic; line-height:1.7; margin:0;">Tu ne seras plus en train de scroller dans le vide.<br>Tu seras en train de construire quelque chose.</p>
     </div>
+
     <div style="margin-top:24px; text-align:center;">
-      <a href="https://noiradigital.com/shop/d7ac9e61-87c6-42ad-bc0a-4fea1e4d22fc?t=1777577758073" style="display:inline-block; background:var(--dark-brown); color:var(--beige); padding:14px 32px; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:2px;">JE COMMENCE MAINTENANT</a>
+      <a href="https://noiradigital.com/shop/d7ac9e61-87c6-42ad-bc0a-4fea1e4d22fc?t=1777577758073" style="display:inline-block; background:var(--mid-brown); color:var(--beige); padding:14px 32px; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:2px;">JE COMMENCE MAINTENANT</a>
     </div>
   </div>
 </section>
@@ -836,10 +1063,7 @@ footer {
       Prête à <em style="font-style:italic; color:var(--taupe);">commencer ?</em>
     </h2>
     <p style="font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:300; color:var(--beige); line-height:1.7; margin-bottom:12px; font-style:italic;">"Dans 7 jours, soit tu es exactement au même point…<br>soit tu as lancé ton système et tu te rapproches de ta première vente."</p>
-    <p style="font-size:14px; color:var(--taupe); margin-bottom:32px; line-height:1.7;">
-       .<br>
-    </p>
-    <div style="font-family:'Cormorant Garamond',serif; font-size:72px; font-weight:300; color:white; line-height:1; margin-bottom:4px;">497 €</div>
+    <div style="font-family:'Cormorant Garamond',serif; font-size:72px; font-weight:300; color:white; line-height:1; margin-bottom:16px;">497 €</div>
     <div style="font-size:11px; color:var(--taupe); margin-bottom:24px; letter-spacing:0.08em; text-transform:uppercase;">Accès immédiat</div>
     <a href="https://noiradigital.com/shop/d7ac9e61-87c6-42ad-bc0a-4fea1e4d22fc?t=1777577758073" style="display:block; background:var(--beige); color:var(--dark-brown); padding:18px 24px; text-align:center; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:2px; margin-bottom:12px;">JE FAIS MA PREMIÈRE VENTE</a>
     <div style="font-size:12px; color:var(--taupe); opacity:0.7;">Accès immédiat · Prix garanti <br>Des questions ? DM moi sur Instagram</div>
@@ -852,6 +1076,42 @@ footer {
 
 <script>
 
+
+
+// SCROLL ANIMATIONS
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Add fade-up to key sections
+document.querySelectorAll('.testi-card, .step-item, .bonus-item, .faq-item, .card').forEach((el, i) => {
+  el.classList.add('fade-up');
+  if (i % 3 === 1) el.classList.add('fade-up-delay-1');
+  if (i % 3 === 2) el.classList.add('fade-up-delay-2');
+  observer.observe(el);
+});
+
+// PROGRESS BAR
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / docHeight) * 100;
+  document.getElementById('progressBar').style.width = progress + '%';
+  
+  // Show floating CTA after scrolling past hero
+  const floatingCta = document.getElementById('floatingCta');
+  if (scrollTop > 600) {
+    floatingCta.classList.add('show');
+  } else {
+    floatingCta.classList.remove('show');
+  }
+});
 
 // FAQ
 function toggleFaq(btn) {
